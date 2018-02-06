@@ -1,8 +1,8 @@
 import { Ng2StateDeclaration } from '@uirouter/angular';
 
-import { HomeComponent } from './home/home.component';
-import {RecipeModificationComponent} from './recipe-modification/recipe-modification.component';
-import {RecipeTemplateBuilderComponent} from './recipe-template-builder/recipe-template-builder.component';
+import { HomeComponent } from './route-components/home/home.component';
+import {RecipeModificationComponent} from './route-components/recipe-modification/recipe-modification.component';
+import {RecipeTemplateBuilderComponent} from './route-components/recipe-template-builder/recipe-template-builder.component';
 
 export const STATES: Ng2StateDeclaration[] = [
   {
