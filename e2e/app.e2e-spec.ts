@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('recipe-tweaker App', () => {
+describe('mc-toolkit-ui App', () => {
   let page: AppPage;
 
   beforeEach(() => {
