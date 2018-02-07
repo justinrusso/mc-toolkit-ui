@@ -1,0 +1,13 @@
+$square-size: 36px;
+
+:host {
+  display: inline-block;
+}
+
+div {
+  background-color: rgba(0, 0, 0, 0.25);
+  width: $square-size;
+  height: $square-size;
+  border: 2px solid #fff;
+  box-shadow: inset 2px 2px 1px #000;
+}

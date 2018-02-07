@@ -1,3 +1,31 @@
-<p>
-  recipe-template-builder works!
-</p>
+<div class="add-menu-wrapper" [class.menu-open]="menuOpen">
+  <div class="toggle-button-wrapper d-flex justify-content-center align-items-center text-white"
+       (click)="toggleMenu()"
+  >
+    <i class="fa fa-plus" aria-hidden="true"></i>
+  </div>
+  <div class="add-menu">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-sm-6 mb-4 px-2" *ngFor="let builder of builderButtons">
+          <div class="ar-1-1">
+            <div class="card border-0 m-0 justify-content-center align-items-center">
+              <div class="card-block text-center p-0">
+                <div class="mx-auto">
+                  <!--TODO: This needs to be dynamic -->
+                  <app-crafting-square></app-crafting-square>
+                </div>
+                <div class="font-weight-light text-capitalize">{{builder.name}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="box-overlay d-flex justify-content-center align-items-center">
+  <!--TODO: Figure out how to add new squares, and get position from center when saved -->
+  <app-crafting-square ngDraggable="true" [inBounds]="true" [bounds]="boundingBox"></app-crafting-square>
+  <app-crafting-square ngDraggable="true" [inBounds]="true" [bounds]="boundingBox"></app-crafting-square>
+</div>
