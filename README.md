@@ -1,5 +1,11 @@
 # MCToolkit UI
 
+Production Branch: 
+[![Build Status](https://travis-ci.org/justinrusso/mc-toolkit-ui.svg?branch=master)](https://travis-ci.org/justinrusso/mc-toolkit-ui)
+
+Development Branch:
+[![Build Status](https://travis-ci.org/justinrusso/mc-toolkit-ui.svg?branch=develop)](https://travis-ci.org/justinrusso/mc-toolkit-ui)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
 
 ## Development server
