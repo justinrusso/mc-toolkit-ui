@@ -19,5 +19,15 @@ script:
   - xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
   - xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
 
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: dist/
+  skip_cleanup: true
+  script: ng build --prod --output-path dist
+  on:
+    branch: master
+    tags: true
+
 notifications:
   email: false
