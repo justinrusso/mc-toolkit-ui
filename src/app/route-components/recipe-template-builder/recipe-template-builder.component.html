@@ -6,6 +6,7 @@
   </div>
   <div class="add-menu">
     <div class="container p-4">
+      <input type="file" (change)="uploadImage()">
       <div class="row">
         <div class="col-sm-6 mb-4 px-2" *ngFor="let builder of builderButtons">
           <div class="ar-1-1">
