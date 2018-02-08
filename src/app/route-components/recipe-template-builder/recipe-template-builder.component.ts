@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2} from '@angular/core';
 
 @Component({
   selector: 'app-recipe-template-builder',
@@ -19,7 +19,10 @@ export class RecipeTemplateBuilderComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private elementRef: ElementRef,
+    public renderer: Renderer2
+  ) { }
 
   ngOnInit() {
   }
@@ -30,5 +33,18 @@ export class RecipeTemplateBuilderComponent implements OnInit {
 
   get boundingBox() {
     return document.body;
+  }
+
+  uploadImage() {
+    const reader = new FileReader();
+    const file = (<HTMLInputElement>this.elementRef.nativeElement.querySelector('input[type=file]')).files[0];
+
+    reader.readAsDataURL(file);
+    reader.addEventListener('load', () => {
+      const imageDataUri = reader.result;
+      this.renderer.setStyle(this.elementRef.nativeElement,
+        'background', `url(${imageDataUri})`
+      );
+    }, false);
   }
 }
